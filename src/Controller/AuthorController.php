@@ -50,4 +50,13 @@ class AuthorController extends AbstractController
     
             return $this->render("author/showAuthor.html.twig",['author'=>$author]);
             }
+            #[Route('/Affiche', name: 'app_Affiche')]
+
+
+    public function Affiche (AuthorRepository $repository)
+        {
+            $author=$repository->findAll() ; //select *
+            return $this->render('author/Affiche.html.twig',['author'=>$author]);
+        }
+
 }
